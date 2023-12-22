@@ -14,12 +14,14 @@ exports.patchValidation = (jsonObject, jsonPatch, res)=>{
   }
 
   if (!Array.isArray(jsonPatch) && typeof jsonPatch !== "object" ) {
-    logger.log("debug", typeof jsonPatch);
     return res
       .status(400)
       .json({ error: "Invalid JSON Patch format. Must be an Array or Object." });
   }
 
-  
-
+  if(Array.isArray(jsonPatch) && jsonPatch.length<1) {
+     return res
+      .status(400)
+      .json({ error: "Invalid JSON Patch.It cannot be an empty array" });
+  }
 }

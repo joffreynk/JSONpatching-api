@@ -1,0 +1,3 @@
+exports.validatePaths = (jsonObject, jsonpatch) => {
+  
+}

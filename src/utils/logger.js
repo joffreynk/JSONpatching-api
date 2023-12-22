@@ -16,7 +16,12 @@ const logger = winston.createLogger({
 
 // Express middleware for logging HTTP requests
 const requestLogger = expressWinston.logger({
-  transports: [new winston.transports.Console()],
+  transports: [
+    new winston.transports.Console({
+      json: true,
+      colorize: true,
+    }),
+  ],
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.json()

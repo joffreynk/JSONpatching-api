@@ -1,27 +1,27 @@
-const { logger } = require("../utils/logger");
+const { logger } = require('../utils/logger');
 
-exports.patchValidation = (jsonObject, jsonPatch, res)=>{
+exports.patchValidation = (jsonObject, jsonPatch, res) => {
   if (!jsonObject || !jsonPatch) {
     return res
       .status(401)
-      .json({ error: "Both JSON object and JSON patch are required." });
+      .json({ error: 'Both JSON object and JSON patch are required.' });
   }
 
-  if (typeof jsonObject !== "object") {
+  if (typeof jsonObject !== 'object') {
     return res
       .status(401)
-      .json({ error: "Invalid JSON object format. Must be an object." });
+      .json({ error: 'Invalid JSON object format. Must be an object.' });
   }
 
-  if (!Array.isArray(jsonPatch) && typeof jsonPatch !== "object" ) {
+  if (!Array.isArray(jsonPatch) && typeof jsonPatch !== 'object') {
     return res
       .status(401)
-      .json({ error: "Invalid JSON Patch format. Must be an Array or Object." });
+      .json({ error: 'Invalid JSON Patch format. Must be an Array or Object.' });
   }
 
-  if(Array.isArray(jsonPatch) && jsonPatch.length<1) {
-     return res
+  if (Array.isArray(jsonPatch) && jsonPatch.length < 1) {
+    return res
       .status(401)
-      .json({ error: "Invalid JSON Patch.It cannot be an empty array" });
+      .json({ error: 'Invalid JSON Patch.It cannot be an empty array' });
   }
-}
+};

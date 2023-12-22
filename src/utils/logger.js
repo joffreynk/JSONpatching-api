@@ -1,16 +1,16 @@
-const winston = require("winston");
-const expressWinston = require("express-winston");
+const winston = require('winston');
+const expressWinston = require('express-winston');
 
 // Create a Winston logger instance
 const logger = winston.createLogger({
-  level: "debug",
+  level: 'debug',
   transports: [
     new winston.transports.Console(),
-    new winston.transports.File({ filename: "logs/app.log" }),
+    new winston.transports.File({ filename: 'logs/app.log' }),
   ],
   format: winston.format.combine(
     winston.format.timestamp(),
-    winston.format.json()
+    winston.format.json(),
   ),
 });
 
@@ -24,10 +24,10 @@ const requestLogger = expressWinston.logger({
   ],
   format: winston.format.combine(
     winston.format.timestamp(),
-    winston.format.json()
+    winston.format.json(),
   ),
   meta: true, // Log metadata such as query parameters
-  msg: "HTTP {{req.method}} {{req.url}}",
+  msg: 'HTTP {{req.method}} {{req.url}}',
 });
 
 module.exports = { logger, requestLogger };

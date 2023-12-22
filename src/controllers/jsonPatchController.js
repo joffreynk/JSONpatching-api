@@ -1,5 +1,5 @@
-const jsonPatchService = require("../services/jsonPatchService");
-const { patchValidation } = require("../validation/patchValiation");
+const jsonPatchService = require('../services/jsonPatchService');
+const { patchValidation } = require('../validation/patchValiation');
 
 exports.applyJsonPatch = async (req, res, next) => {
   try {

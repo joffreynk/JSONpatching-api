@@ -464,3 +464,4 @@
 {"level":"debug","message":"Server is running on port 3000 \n","timestamp":"2023-12-22T14:36:13.340Z"}
 {"code":"ERR_HTTP_HEADERS_SENT","level":"debug","timestamp":"2023-12-22T14:36:13.425Z"}
 {"code":"ERR_HTTP_HEADERS_SENT","level":"debug","timestamp":"2023-12-22T14:36:13.439Z"}
+{"level":"debug","message":"Server is running on port 3000 \n","timestamp":"2023-12-22T15:28:43.984Z"}

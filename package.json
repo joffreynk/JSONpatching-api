@@ -19,7 +19,7 @@
     "json-patch": "^0.7.0",
     "jsonwebtoken": "^9.0.2",
     "prom-client": "^15.1.0",
-    "uuidv4": "^6.2.13",
+    "uuid": "^9.0.1",
     "winston": "^3.11.0"
   },
   "devDependencies": {

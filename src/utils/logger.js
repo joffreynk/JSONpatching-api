@@ -3,6 +3,7 @@ const expressWinston = require("express-winston");
 
 // Create a Winston logger instance
 const logger = winston.createLogger({
+  level: "debug",
   transports: [
     new winston.transports.Console(),
     new winston.transports.File({ filename: "logs/app.log" }),

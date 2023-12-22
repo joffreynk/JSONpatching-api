@@ -16,18 +16,19 @@ app.use((req, res, next) => {
 
 app.use(requestLogger);
 
-app.post("/login", authController.login);;
+app.post("/login", authController.login);
+
 app.post(
   "/patchjson",
   authMiddleware.authenticateJWT,
   jsonPatchController.applyJsonPatch
-);;
-
-// app.use(errorHandlers.handleValidationError);
-// app.use(errorHandlers.handleNotFoundError);
+);
 
 // Start Server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  logger.log("debug", `Server is running on port ${PORT}`);
+  logger.log("debug", `Server is running on port ${PORT} \n`);
 });
+
+// export for testing purposes
+module.exports = app;

@@ -20,4 +20,6 @@ exports.authenticateJWT = (req, res, next) => {
       return next();
     },
   );
+
+  return null;
 };

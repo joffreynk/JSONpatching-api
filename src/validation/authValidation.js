@@ -23,4 +23,6 @@ exports.authValidation = (username, password, res) => {
       .status(401)
       .json({ error: 'Username must contain only alphabetic letters.' });
   }
+
+  return null;
 };

@@ -1,5 +1,3 @@
-const { logger } = require('../utils/logger');
-
 exports.patchValidation = (jsonObject, jsonPatch, res) => {
   if (!jsonObject || !jsonPatch) {
     return res
@@ -24,4 +22,5 @@ exports.patchValidation = (jsonObject, jsonPatch, res) => {
       .status(401)
       .json({ error: 'Invalid JSON Patch.It cannot be an empty array' });
   }
+  return null;
 };

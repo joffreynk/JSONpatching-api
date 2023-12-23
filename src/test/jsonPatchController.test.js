@@ -5,6 +5,7 @@ const app = require('../app');
 let token;
 
 describe('JSON Patch Controller', () => {
+  
   before('login before patching and set token', (done) => {
     request(app)
       .post('/login')
@@ -33,7 +34,7 @@ describe('JSON Patch Controller', () => {
           { result: { name: 'John', age: 31 } },
           'Invalid patched JSON object',
         );
-        done();
+        return done();
       });
   });
 
